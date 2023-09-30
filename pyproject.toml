@@ -1,0 +1,36 @@
+[project]
+name = "digitaloceanfirewall"
+version = "0.1.1"
+authors = [
+	{ name="Justine Krejcha", email="justine@justinekrejcha.com" },
+]
+description = "Modification script for use with DigitalOcean and Cloudflare"
+readme = "README.md"
+requires-python = ">= 3.10"
+dependencies = [
+	"pydo == 0.1.7",
+]
+
+[project.scripts]
+digitaloceanfirewall = "digitaloceanfirewall:__main__"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["digitaloceanfirewall"]
+
+[tool.pyright]
+include = ["digitaloceanfirewall"]
+exclude = [
+	"**/__pycache__"
+]
+strict = []
+pythonVersion = "3.11"
+reportInvalidStringEscapeSequence = "error"
+reportMissingParameterType = "error"
+
+[tool.mypy]
+packages = ["digitaloceanfirewall"]
+python_version = "3.11"
