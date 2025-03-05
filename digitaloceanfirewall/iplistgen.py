@@ -33,7 +33,7 @@ class CloudflareListGen(IpListGen):
 _DATA_FILE: Final[str] = "data/countries.json"
 
 class CountryListGen(IpListGen):
-	__slots__ = ('country')
+	__slots__ = ('country',)
 
 	def __init__(self, country: str) -> None:
 		self.country: str = country
